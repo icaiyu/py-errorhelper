@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: errorhelper
+Version: 0.1.5
+Summary: A tool for python beginer to understand exception or error in Chinese. 一款帮助中国python初学者看懂错误的工具
+Home-page: https://github.com/icaiyu/py-errorhelper
+Author-email: icaiyu@163.com
+License: MIT
+Description: # 一款帮助中国的python初学者看懂exception和error的工具
+        本工具的主要功能是对相应的错误给出中文提示
+        ## 安装
+        pip install errorhelper
+        
+        ## 使用
+        在您的代码上面加入如下的代码
+        ```
+        import errorhelper
+        ```
+        
+        ## 注意事项
+        由于编译器会对代码进行预编译，所以未能捕捉 compile 时候发生的错误，比如空格出错或者语法出错，如果您需要相关的全面检测，可以考虑 pylint
+        
+        ## 可能会有的功能
+        为了弥补不能捕捉编译错误的缺陷，将来可能会加上代码扫描功能，不过使用上可能就没那么方便了，必须以您的代码作为输入参数，在cmd中运行工具脚本
+Platform: UNKNOWN
+Description-Content-Type: text/markdown

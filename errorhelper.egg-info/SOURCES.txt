@@ -1,0 +1,8 @@
+README.md
+errorhelper.py
+setup.py
+errorhelper.egg-info/PKG-INFO
+errorhelper.egg-info/SOURCES.txt
+errorhelper.egg-info/dependency_links.txt
+errorhelper.egg-info/not-zip-safe
+errorhelper.egg-info/top_level.txt

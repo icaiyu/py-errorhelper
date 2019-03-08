@@ -8,7 +8,7 @@ else:
     from cStringIO import StringIO
 
 
-ERRORS = u'''{
+ERRORHELPERERRORS = u'''{
             "StopIteration":["迭代停止","迭代器不能再通过next返回元素的时候引起该错误"],
             "StopAsyncIteration":["异步迭代停止","异步迭代器不能通过__next__()返回元素引起该错误"],
             "FloatingPointError":["浮点错误","浮点运算失败时引发 始终定义此异常，但只能在使用--with-fpectl选项配置Python或在pyconfig.h文件中定义WANT_SIGFPE_HANDLER符号时引发此异常"],
@@ -62,16 +62,16 @@ ERRORS = u'''{
 
 
 if __name__ != '__main__':
-    olderr = sys.stderr
-    sys.stderr = errrecorder = StringIO()
+    errorhlper_olderr = sys.stderr
+    sys.stderr = errorhelper_recorder = StringIO()
 
     @atexit.register
     def helper():
-        msg = errrecorder.getvalue()
+        msg = errorhelper_recorder.getvalue()
         if not msg:
             return
 
-        errors = json.loads(ERRORS)
+        errors = json.loads(ERRORHELPERERRORS)
 
         for k, v in errors.items():
             if k in msg:
@@ -79,7 +79,7 @@ if __name__ != '__main__':
                 break
         else:
             msg += edit_info(u"oh,还没翻译这个错误",["",u"您可以向 icaiyu@163.com 报告该错误，以便添加进errorhelper的新版本中",""])
-        olderr.write(msg)
+        errorhlper_olderr.write(msg)
         exit()
 
     def edit_info(k,v):
